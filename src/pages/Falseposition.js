@@ -2,7 +2,7 @@ import { Form, Button } from 'react-bootstrap'
 import { evaluate } from 'mathjs';
 import { useState } from 'react';
 
-const Falseposition = () => {
+const FalsePosition = () => {
 
     const [fx, setfx] = useState('')
     const [xl, setxl] = useState(0)
@@ -109,4 +109,4 @@ const Falseposition = () => {
     
 }
 
-export default Falseposition
+export default FalsePosition

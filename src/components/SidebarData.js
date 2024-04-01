@@ -14,7 +14,7 @@ export const SidebarData = [
             },
             {
                 title: 'False-Position',
-                path: '/False-Position',
+                path: '/FalsePosition',
             },
             {
                 title: 'One-Point',
@@ -22,7 +22,7 @@ export const SidebarData = [
             },
             {
                 title: 'Newton Raphson',
-                path: '/Newtonraphson',
+                path: '/NewtonRaphson',
             },
             {
                 title: 'Secant',
@@ -39,10 +39,28 @@ export const SidebarData = [
         iconOpened: <RiIcons.RiArrowUpSFill/>,
         subNav: [
             {
-                title: 'Test 3',
-                path: '/test3',
+                title: 'Gauss-Jordan',
+                path: '/GaussJordan',
             },
             
+        ],
+        
+    },
+
+    {
+        title: 'Regression',
+        path: '#0',
+        iconClosed: <RiIcons.RiArrowDownSFill/>,
+        iconOpened: <RiIcons.RiArrowUpSFill/>,
+        subNav: [
+            {
+                title: 'Linear',
+                path: '/LinearRegression',
+            },
+            {
+                title: 'Polynomial',
+                path: '/PolynomialRegression',
+            },
         ],
         
     },

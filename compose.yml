@@ -1,0 +1,17 @@
+version: '3.8' # Specify docker-compose version
+
+name: react-container
+services:
+  # First service (assuming npm start runs your app on port 3000)
+  app1:
+    build: . # Build the image from the current directory (context)
+    ports:
+      - '3002:3000' # Map container port 3000 to host port 3000
+    command: ['npm', 'start'] # Run npm start command inside the container
+
+  # Second service (assuming server.js defines your app on default port)
+  app2:
+    build: . # Reuse the same Dockerfile for both services (if applicable)
+    ports:
+      - '4002:4000' # Map container port 3000 (default) to host port 4000
+    command: ['node', 'server.js'] # Run node server.js script inside the container
