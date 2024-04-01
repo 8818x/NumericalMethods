@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Bisection from './pages/Bisection';
-import FalsePosition from './pages/FalsePosition';
+// import FalsePosition from './pages/FalsePosition';
 import Onepoint from './pages/Onepoint';
 import NewtonRaphson from './pages/NewtonRaphson';
 import Secant from './pages/Secant';
@@ -23,7 +23,7 @@ function App() {
         <Routes>
           <Route path='/' exact element={<Navigate to='/Bisection' />} />
           <Route path='/Bisection' element={<Bisection />} />
-          <Route path='/FalsePosition' element={<FalsePosition />} />
+          {/* <Route path='/FalsePosition' element={<FalsePosition />} /> */}
           <Route path='/One-Point' element={<Onepoint />} />
           <Route path='/NewtonRaphson' element={<NewtonRaphson />} />
           <Route path='/Secant' element={<Secant />} />
