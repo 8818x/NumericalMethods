@@ -19,7 +19,7 @@ const LinearRegression = (event) => {
 
     const getapi = (event) => {
         
-        axios.get('http://localhost:4002/data').then(res => {
+        axios.get('http://192.168.15.227:4002/data').then(res => {
             let datas = res.data;
             datas.forEach(val => {
                 // console.log(`${val.i} ${val.x} ${val.y} `)
@@ -30,7 +30,7 @@ const LinearRegression = (event) => {
                 console.log(error);
             })
 
-        axios.get('http://localhost:4002/input').then(res => {
+        axios.get('http://192.168.15.227:4002/input').then(res => {
             setdata(res.data)
             
         }).catch(error => {

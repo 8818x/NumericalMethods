@@ -4,7 +4,7 @@ const port = 4000;
 const data = require('./server/data.json'); 
 
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3002'); 
+    res.setHeader('Access-Control-Allow-Origin', 'http://192.168.15.227:3002'); 
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     next();
@@ -28,5 +28,5 @@ app.get('/input', (req, res) => {
 
 
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+    console.log(`Server running at http://192.168.15.227:${port}`);
 });

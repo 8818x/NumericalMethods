@@ -23,9 +23,9 @@ function App() {
         <Routes>
           <Route path='/' exact element={<Navigate to='/Bisection' />} />
           <Route path='/Bisection' element={<Bisection />} />
-          <Route path='/FalsePosition' element={<FalsePosition />} />
+          {/* <Route path='/FalsePosition' element={<FalsePosition />} /> */}
           <Route path='/One-Point' element={<Onepoint />} />
-          <Route path='/NewtonRaphson' element={<NewtonRaphson />} />
+          {/* <Route path='/NewtonRaphson' element={<NewtonRaphson />} /> */}
           <Route path='/Secant' element={<Secant />} />
           <Route path='/GaussJordan' element={<GaussJordan />} />
           <Route path='/LinearRegression' element={<LinearRegression />} />
