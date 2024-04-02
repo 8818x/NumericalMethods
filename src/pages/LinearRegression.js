@@ -7,7 +7,7 @@ import axios from "axios"
 
 const LinearRegression = (event) => {
     const [datax, setdata] = useState([])
-    const [n, setn] = useState(0)
+    const [n, setn] = useState("")
     const [x, setx] = useState("")
     const [fx, setfx] = useState("")
     const [value, setvalue] = useState("")

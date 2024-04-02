@@ -1,124 +1,124 @@
-// import { Form, Button, Table } from "react-bootstrap"
-// import { evaluate, derivative } from "mathjs"
-// import { useState } from "react"
-// import { Line } from "react-chartjs-2"
+import { Form, Button, Table } from "react-bootstrap"
+import { evaluate, derivative } from "mathjs"
+import { useState } from "react"
+import { Line } from "react-chartjs-2"
 
 const NewtonRaphson = () => {
-    // const [fx, setfx] = useState("")
-    // const [xo, setxo] = useState(0)
-    // const [xn, setxn] = useState("")
-    // const [d, setdiff] = useState("")
-    // const [dataGraph, setGraph] = useState([])
-    // const [dataTable, setTable] = useState([])
+    const [fx, setfx] = useState("")
+    const [xo, setxo] = useState(0)
+    const [xn, setxn] = useState("")
+    const [d, setdiff] = useState("")
+    const [dataGraph, setGraph] = useState([])
+    const [dataTable, setTable] = useState([])
 
-    // const getfx = (event) => {
-    //     setfx(event.target.value);
-    // }
+    const getfx = (event) => {
+        setfx(event.target.value);
+    }
 
-    // const getxo = (event) => {
-    //     setxo(event.target.value)
-    // }
+    const getxo = (event) => {
+        setxo(event.target.value)
+    }
 
-    // const submit = (event) => {
-    //     event.preventDefault()
-    //     const data = {
-    //         fx: fx,
-    //         xo: Number(xo)
-    //     }
-    //     console.log(data)
-    //     calculate(fx, xo)
-    // }
+    const submit = (event) => {
+        event.preventDefault()
+        const data = {
+            fx: fx,
+            xo: Number(xo)
+        }
+        console.log(data)
+        calculate(fx, xo)
+    }
 
-    // const fontStyle = {
-    //     fontSize: "1.5rem",
-    // }
+    const fontStyle = {
+        fontSize: "1.5rem",
+    }
 
-    // const paddingStyle = {
-    //     padding: "0.75rem",
-    // }
+    const paddingStyle = {
+        padding: "0.75rem",
+    }
 
-    // const graphStyle = {
-    //     padding: "0.75rem",
-    //     width: '600px',
-    //     height: '400px'
-    // }
+    const graphStyle = {
+        padding: "0.75rem",
+        width: '600px',
+        height: '400px'
+    }
 
-    // const value = {
-    //     labels: dataGraph.z,
-    //     datasets: [
-    //         {
-    //             label: "x",
-    //             data: dataGraph.x,
-    //             borderColor: "#3fc1c9",
-    //             backgroundColor: "#3fc1c9",
-    //             yAxisID: "y",
-    //         },
-    //         {
-    //             label: "error",
-    //             data: dataGraph.y,
-    //             borderColor: "#fc5185",
-    //             backgroundColor: "#fc5185",
-    //             yAxisID: "y",
-    //         },
-    //     ],
-    // };
+    const value = {
+        labels: dataGraph.z,
+        datasets: [
+            {
+                label: "x",
+                data: dataGraph.x,
+                borderColor: "#3fc1c9",
+                backgroundColor: "#3fc1c9",
+                yAxisID: "y",
+            },
+            {
+                label: "error",
+                data: dataGraph.y,
+                borderColor: "#fc5185",
+                backgroundColor: "#fc5185",
+                yAxisID: "y",
+            },
+        ],
+    };
 
-    // const options = {}
-    // const calculate = (fx, xo) => {
-    //     let xn = 0,
-    //         dxn = 0
-    //     let e = 0.000001
-    //     let error = 100;
-    //     let xn_arr = [],
-    //         error_arr = [],
-    //         iter_arr = []
-    //     let array = []
-    //     let i = 0
+    const options = {}
+    const calculate = (fx, xo) => {
+        let xn = 0,
+            dxn = 0
+        let e = 0.000001
+        let error = 100;
+        let xn_arr = [],
+            error_arr = [],
+            iter_arr = []
+        let array = []
+        let i = 0
 
-    //     const func = (x) => {
-    //         let scope = {
-    //             x: x,
-    //         }
-    //         let value = evaluate(fx, scope)
+        const func = (x) => {
+            let scope = {
+                x: x,
+            }
+            let value = evaluate(fx, scope)
 
-    //         return value
-    //     }
+            return value
+        }
 
-    //     const dfunc = (x) => {
-    //         let scope = {
-    //             x: x,
-    //         }
+        const dfunc = (x) => {
+            let scope = {
+                x: x,
+            }
 
-    //         let diff = derivative(fx, "x").evaluate(scope)
-    //         return diff
-    //     }
+            let diff = derivative(fx, "x").evaluate(scope)
+            return diff
+        }
 
-    //     let difftoString = derivative(fx, "x").toString()
-    //     setdiff(difftoString)
+        let difftoString = derivative(fx, "x").toString()
+        setdiff(difftoString)
 
-    //     while (error > e) {
-    //         dxn = -func(xo) / dfunc(xo)
-    //         xn = xo - -dxn;
-    //         error = Math.abs((xn - xo) / xn)
-    //         xo = xn
+        while (error > e) {
+            dxn = -func(xo) / dfunc(xo)
+            xn = xo - -dxn;
+            error = Math.abs((xn - xo) / xn)
+            xo = xn
 
-    //         xn_arr[i] = xn
-    //         error_arr[i] = error
-    //         iter_arr[i] = i
+            xn_arr[i] = xn
+            error_arr[i] = error
+            iter_arr[i] = i
 
-    //         array.push({ x: xn, y: error, z: i })
-    //         i++
-    //     }
+            array.push({ x: xn, y: error, z: i })
+            i++
+        }
 
-    //     setxn(xn)
-    //     setGraph({ x: xn_arr, y: error_arr, z: iter_arr })
-    //     setTable(array)
-    //     console.log(array)
-    // }
+        setxn(xn)
+        setGraph({ x: xn_arr, y: error_arr, z: iter_arr })
+        setTable(array)
+        console.log(array)
+    }
 
     return (
         <div>
-            {/* <Form className="container" onSubmit={submit}>
+            <Form className="container" onSubmit={submit}>
                 <div className="row justify-content-center">
                     <h1 className="col-md-auto">Newton Raphson Method</h1>
                 </div>
@@ -186,7 +186,7 @@ const NewtonRaphson = () => {
                         </Table>
                     </div>
                 </div>
-            </div> */}
+            </div>
         </div>
     )
 }
